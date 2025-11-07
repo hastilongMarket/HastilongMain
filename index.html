@@ -5,6 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HastiLong</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1a130d;
+      color: #f8f5f0;
+      position: relative;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 10px 30px;
+      border-bottom: 2px solid #d4af37;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-area .logo {
+      height: 70px; /* enlarged logo */
+      width: auto;
+    }
+
+    .logo-area h1 {
+      color: #1a130d;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #1a130d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/HastiLogo.png') no-repeat center;
+      background-size: contain;
+      background-attachment: fixed;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #f3e9d2;
+      margin-bottom: 25px;
+    }
+
+    .hero button {
+      background-color: #d4af37;
+      color: #1a130d;
+      border: none;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #b8962f;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      padding: 50px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .product {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .product p {
+      color: #f3e9d2;
+      margin: 5px 0;
+    }
+
+    .product button {
+      background-color: #d4af37;
+      border: none;
+      color: #1a130d;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .product button:hover {
+      background-color: #b8962f;
+    }
+
+    .about {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .about h2 {
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #1a130d;
+      color: #d4af37;
+      padding: 10px 0;
+      border-top: 2px solid #d4af37;
+    }
+
+    footer marquee {
+      font-weight: bold;
+    }
+
+    /* Large faded logo watermark at bottom */
+    body::after {
+      content: "";
+      background: url('images/HastiLogo.png') no-repeat center bottom;
+      background-size: 400px;
+      opacity: 0.05;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,7 +207,32 @@
     </div>
   </section>
 
-  <section class="products" id="products"></section>
+  <section class="products" id="products">
+    <div class="product">
+      <img src="images/product1.png" alt="Product 1" />
+      <h3>Classic Cotton Tee</h3>
+      <p>₹199</p>
+      <button>+</button>
+    </div>
+    <div class="product">
+      <img src="images/product2.png" alt="Product 2" />
+      <h3>Urban Denim Shirt</h3>
+      <p>₹299</p>
+      <button>+</button>
+    </div>
+    <div class="product">
+      <img src="images/product3.png" alt="Product 3" />
+      <h3>Golden Weave Kurta</h3>
+      <p>₹599</p>
+      <button>+</button>
+    </div>
+    <div class="product">
+      <img src="images/product4.png" alt="Product 4" />
+      <h3>Luxury Linen Set</h3>
+      <p>₹1999</p>
+      <button>+</button>
+    </div>
+  </section>
 
   <section class="about">
     <h2>About HastiLong</h2>
@@ -38,23 +240,7 @@
   </section>
 
   <footer>
-    <marquee>HastiLong • ହସ୍ତିଲଂଗ • हस्तिलोंग • ஹஸ்திலாங் • ഹസ്തിലോംഗ് • ಹಸ್ತಿಲಾಂಗ್ • ஹஸ்திலாங்</marquee>
+    <marquee>HastiLong • ହସ୍ତିଲଂଗ • हस्तिलोंग • ஹஸ்திலாங் • ഹസ്തിലോംഗ് • ಹಸ್ತಿಲಾಂಗ್ • హస్తిలోంగ్</marquee>
   </footer>
-
-  <script>
-    fetch('data/products.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('products');
-        data.forEach(p => {
-          const item = document.createElement('div');
-          item.className = 'product';
-          item.innerHTML = `<img src="${p.image}" alt="${p.name}" />
-                            <h3>${p.name}</h3>
-                            <p>₹${p.price}</p>`;
-          container.appendChild(item);
-        });
-      });
-  </script>
 </body>
 </html>
