@@ -1,0 +1,6 @@
+[
+  {"name": "Cotton Kurta", "price": 999, "image": "images/product1.jpg"},
+  {"name": "Linen Shirt", "price": 1299, "image": "images/product2.jpg"},
+  {"name": "Silk Stole", "price": 899, "image": "images/product3.jpg"},
+  {"name": "Handwoven Saree", "price": 2999, "image": "images/product4.jpg"}
+]
