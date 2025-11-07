@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HastiLong</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <img src="images/logo.png" alt="HastiLong Logo" class="logo" />
+      <h1>HastiLong</h1>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Cart</a>
+      <a href="#">Help</a>
+      <a href="#">Settings</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <div class="overlay">
+      <h2>Elegance in Every Thread</h2>
+      <p>Discover limited edition pieces crafted for timeless charm.</p>
+      <button>Shop Now</button>
+    </div>
+  </section>
+
+  <section class="products" id="products"></section>
+
+  <section class="about">
+    <h2>About HastiLong</h2>
+    <p>HastiLong brings together earthy tones and golden accents for a refined aesthetic that celebrates craftsmanship and culture.</p>
+  </section>
+
+  <footer>
+    <marquee>HastiLong • ହସ୍ତିଲଂଗ • हस्तिलोंग • ஹஸ்திலாங் • ഹസ്തിലോംഗ് • ಹಸ್ತಿಲಾಂಗ್ • ஹஸ்திலாங்</marquee>
+  </footer>
+
+  <script>
+    fetch('data/products.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('products');
+        data.forEach(p => {
+          const item = document.createElement('div');
+          item.className = 'product';
+          item.innerHTML = `<img src="${p.image}" alt="${p.name}" />
+                            <h3>${p.name}</h3>
+                            <p>₹${p.price}</p>`;
+          container.appendChild(item);
+        });
+      });
+  </script>
+</body>
+</html>
